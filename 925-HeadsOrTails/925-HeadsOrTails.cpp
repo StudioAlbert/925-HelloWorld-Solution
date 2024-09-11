@@ -11,7 +11,7 @@ int main()
 	std::srand(std::time(nullptr));
 
 	// 1 : On demande au joueur un choix Pile ou Face
-	std::cout << "Bienvenue au jeu de Pile ou Face." << '\n';
+	std::cout << "Bienvenue au jeu de dés à 6 face" << '\n';
 	std::cout << "Pile [P/p] ou Face [F/f] ?????" << '\n';
 
 	// 2 : Stockage de la réponse

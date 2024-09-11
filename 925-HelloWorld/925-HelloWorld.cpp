@@ -23,6 +23,7 @@ void main()
     word.append("omar\n");
     word.append("seb\n");
     word.append("anthony\n");
+    word.append("clara\n");
 
 	int modified_value = 0.5f;
 
