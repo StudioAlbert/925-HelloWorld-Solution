@@ -15,7 +15,7 @@ void main()
         std::cout << sEbaStiEN_fjfkslk << std::endl;
     }
 
-    // Affectation du caractére à la valeur a
+    // Affectation du caractÃ©re Ã  la valeur a
     char carac = 'a';
 
     std::string word = "";
@@ -24,10 +24,11 @@ void main()
     word.append("seb\n");
     word.append("anthony\n");
     word.append("clara\n");
+    word.append;
 
 	int modified_value = 0.5f;
 
-	// Affichage des résultats
+	// Affichage des rÃ©sultats
     std::cout << addNumbers(modified_value, modified_value) << std::endl;
 
     modified_value = 6;
