@@ -3,56 +3,101 @@
 
 #include <iostream>
 
+bool continueMessage()
+{
+	char reponse;
+	
+	std::cout << "Voulez vous continuer [o/n] ?\n";
+	std::cin >> reponse;
+
+	//return reponse != 'n';
+
+	if(reponse != 'n')
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
 int main()
 {
+
 	char reponse;
 	char tirage;
 
 	std::srand(std::time(nullptr));
 
-	// 1 : On demande au joueur un choix Pile ou Face
-	std::cout << "Bienvenue au jeu de dés à 6 face" << '\n';
-	std::cout << "Pile [P/p] ou Face [F/f] ?????" << '\n';
-
-	// 2 : Stockage de la réponse
-	std::cin >> reponse;
-
-	if (reponse == 'P' || reponse == 'p')
+	for(int i = 0; i < 5; i++)
 	{
-		std::cout << "tu as joue PILE\n";
-		reponse = 'P';
-	}
-	else if (reponse == 'F' || reponse == 'f')
-	{
-		std::cout << "tu as joue FACE\n";
-		reponse = 'F';
-	}
-	else
-	{
-		std::cout << "Tricheur...................." << '\n';
-		return EXIT_FAILURE;
+		if(i == 2)
+		{
+			continue;
+		}
+		std::cout << "Counter i = " << i << std::endl;
 	}
 
-	// 3 : Tirage de la pièce
-	if (std::rand() % 2 == 0)
-	{
-		// Rand renvoie un numero pair => PILE
-		tirage = 'P';
-	}else
-	{
-		// Rand renvoie un numero impair => FACE
-		tirage = 'F';
-	}
-	std::cout << "La pièce a donnee " << tirage << '\n';
 
-	// 4 : Comparaison Piece , Réponse
-	if(tirage == reponse)
+	do
 	{
-		std::cout << "GAGNE :)\n";
-	}else
-	{
-		std::cout << "PERDU :(\n";
-	}
+		// 1 : On demande au joueur un choix Pile ou Face
+		std::cout << "Bienvenue au jeu de dés à 6 face" << '\n';
+		std::cout << "Pile [P/p] ou Face [F/f] ?????" << '\n';
+
+		// 2 : Stockage de la réponse
+		std::cin >> reponse;
+
+		switch (reponse)
+		{
+		case 'p':
+			std::cout << "tu as tapé p\n";
+		case 'P':
+			std::cout << "tu as joue PILE\n";
+			reponse = 'P';
+			break;
+
+		case 'f':
+		case 'F':
+			std::cout << "tu as joue FACE\n";
+			reponse = 'F';
+			break;
+
+		default:
+			std::cout << "Tricheur...................." << '\n';
+			break;
+
+		}
+
+		// 3 : Tirage de la pièce
+		if (std::rand() % 2 == 0)
+		{
+			// Rand renvoie un numero pair => PILE
+			tirage = 'P';
+		}
+		else
+		{
+			// Rand renvoie un numero impair => FACE
+			tirage = 'F';
+		}
+		std::cout << "La pièce a donnee " << tirage << '\n';
+
+		// 4 : Comparaison Piece , Réponse
+		if (tirage == reponse)
+		{
+			std::cout << "GAGNE :)\n";
+		}
+		else
+		{
+			std::cout << "PERDU :(\n";
+		}
+
+
+	} while (continueMessage());
+
+	std::cout << "Au revoir" << std::endl;
 
 	return EXIT_SUCCESS;
 
